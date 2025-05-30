@@ -14,28 +14,64 @@ Object.entries(headers).map(([k, v]) => {
 });
 
 const explainer = `
-This is a server-rendered page, last created at \`${new Date().toUTCString()}\` with a few extra response headers:
+Learn. Build. Grow.
+Empowering Future Marketers & Scaling Startups with Real-World Marketing Experience :
 
 ~~~js
 ${JSON.stringify(headers, null, 2)}
 ~~~
 
-Meaning: **for browsers,** this is a non-cacheable page. At the **CDN level,** it *is* cacheable for up to a year (and Netlify also automatically busts the cache on new deployments, by default).
+AfterResult is an EdTech-powered marketing agency with a mission to educate, empower, and elevate individuals and businesses through hands-on marketing experiences.
 
-But there's something more: the \`Cache-Tag\` header, in tandem with the [purge API](https://docs.netlify.com/platform/caching/#on-demand-invalidation), allows a developer to invalidate at will any
-pieces of content (pages, JSON responses, or whatnot) based on the tags associated with them. Tags are completely up to you to decide on, and allow for very powerful patterns.
 
-In real-world applications, you may want to use [stale-while-revalidate](https://docs.netlify.com/platform/caching/#stale-while-revalidate-directive) as well, so that end-users don't experience 
-a performance hit as pages are being rebuilt.
 
-Use the button below to invlidate a random tag out of this page's tags, then refresh the page.
+We specialize in live sessions, personalized counseling, and real-world project involvement—bridging the gap between theory and practice. Whether you're a student eager to break into digital marketing or a startup founder aiming to scale, we offer structured learning paths and real marketing campaigns to help you learn, connect, and grow.
+
+
+
+Our unique learning ecosystem empowers learners by involving them directly in ongoing client projects, enabling them to work on live marketing strategies, campaigns, and brand development—so they don't just learn marketing, they do marketing.
+
+What We Do
+Beyond education, AfterResult provides end-to-end management services tailored for modern businesses. Our core services include:
+
+
+
+Social Media Management: Strategy, content creation, posting, engagement, and analytics across platforms like Instagram, LinkedIn, Facebook, and more.
+
+
+
+Account Creation & Setup: We help businesses and individuals get started with professional accounts on platforms like Google My Business, Justdial, marketplaces, and social media channels.
+
+
+
+Marketplace Management: We support product-based businesses with onboarding and growth on e-commerce platforms such as Amazon, Flipkart, and others.
+
+
+
+Digital Growth Services: From website development (Shopify, WordPress) to business profile creation and brand visibility, we offer a 360° digital presence strategy.
+
+What We Do
+Students & Learners: Get trained through live sessions, internships, and workshops on real projects.
+
+
+Startups & Founders: Access counseling sessions, digital setup services, and community-driven growth support.
+
+
+Businesses: Outsource your digital marketing, content, social media, and marketplace operations to our expert team.
+
+
+At AfterResult, we’re not just building a service. We’re building a community of marketers, learners, and founders who collaborate to build what’s next.
+
+
+
+Join us in transforming ideas into impactful results—because your growth is our AfterResult. .
 `;
 
 const exampleTag = tags[randomInt(0, tags.length - 1)];
 ---
 
-<Layout title="Revalidation">
-    <h1 class="mb-10">Revalidating Server Content</h1>
+<Layout title="AR Solutions">
+    <h1 class="mb-10">AfterResult Solutions About</h1>
     <Markdown content={explainer} class="mb-10" />
     <div class="flex flex-wrap gap-4">
         <button class="revalidate-button btn" data-tag={exampleTag}>Invalidate tag: {exampleTag}</button>
